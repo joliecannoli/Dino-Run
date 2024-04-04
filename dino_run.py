@@ -126,6 +126,8 @@ def main():
 
     def score():
         global points, game_speed
+        if points % 100 == 0:
+            game_speed += 1
 
     def track():
         global x_pos_bg, y_pos_bg
