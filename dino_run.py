@@ -126,6 +126,7 @@ def main():
         global x_pos_bg, y_pos_bg
         image_width = TRACK.get_width()
         SCREEN.blit(TRACK, (x_pos_bg, y_pos_bg))
+        SCREEN.blit(TRACK, (image_width + x_pos_bg, y_pos_bg))
         if x_pos_bg <= -image_width:
             SCREEN.blit(TRACK, (image_width + x_pos_bg, y_pos_bg))
             x_pos_bg = 0
