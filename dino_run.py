@@ -127,11 +127,17 @@ class Obstacle:
     def draw(self, SCREEN):
         SCREEN.blit(self.image[self.type], self.rect)
 
-def small_cactus(obstacle):
+class small_cactus(Obstacle):
     def __init__(self, image):
         self.type = random = randint(0, 2)
         super().__init__(image, self.type)
         self.rect.y = 325
+
+class large_cactus(Obstacle):
+        def __init__(self, image):
+            self.type = random.randint(0, 2)
+            super().__init__(image, self.type)
+            self.rect.y = 300
 
         def draw(self, SCREEN):
             SCREEN.blit(self.image[self.type], self.rect)
