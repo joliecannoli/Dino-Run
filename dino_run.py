@@ -149,7 +149,7 @@ class bird(Obstacle):
         def draw(self, SCREEN):
             if self.index >= 9:
                 self.index = 0
-            SCREEN.blit(self.image[self.type], self.rect)
+            SCREEN.blit(self.image[self.index//5], self.rect)
             self.index +=1
 
 
