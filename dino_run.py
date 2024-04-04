@@ -1,5 +1,6 @@
 import pygame 
 import os
+import random
 
 pygame.init()
 SCREEN_HEIGHT = 600
@@ -95,7 +96,15 @@ class Dinosaur:
     def draw(self, SCREEN):
         SCREEN.blit(self.image, (self.dino_rect.x, self.dino_rect.y))
 
+class Cloud:
+    def __init__ (self):
+        self.x = SCREEN_WIDTH + random.randint(800, 1000)
+        self.y = random.randint(50, 100)
+        self.image = CLOUDS
+        self.width = self.image.get_width()
+
 def main():
+    global game_speed
     run = True 
     clock = pygame.time.Clock()
     player = Dinosaur()
