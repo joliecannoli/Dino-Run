@@ -129,7 +129,7 @@ class Obstacle:
 
 class small_cactus(Obstacle):
     def __init__(self, image):
-        self.type = random = randint(0, 2)
+        self.type = random.randint(0, 2)
         super().__init__(image, self.type)
         self.rect.y = 325
 
@@ -139,8 +139,18 @@ class large_cactus(Obstacle):
             super().__init__(image, self.type)
             self.rect.y = 300
 
+class bird(Obstacle):
+        def __init__(self, image):
+            self.type = 0
+            super().__init__(image, self.type)
+            self.rect.y = 250
+            self.index = 0
+
         def draw(self, SCREEN):
+            if self.index >= 9:
+                self.index = 0
             SCREEN.blit(self.image[self.type], self.rect)
+            self.index +=1
 
 
 def main():
@@ -154,6 +164,7 @@ def main():
     y_pos_bg = 380
     points = 0
     font = pygame.font.Font('freesansbold.ttf', 20)
+    obstacles = []
 
     def score():
         global points, game_speed
