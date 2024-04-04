@@ -113,7 +113,7 @@ class Clouds:
         SCREEN.blit(self.image, (self.x, self.y))
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg
+    global game_speed, x_pos_bg, y_pos_bg, points
     run = True 
     clock = pygame.time.Clock()
     player = Dinosaur()
@@ -121,6 +121,11 @@ def main():
     game_speed = 14
     x_pos_bg = 0
     y_pos_bg = 380
+    points = 0
+    font = pygame.font.Font('freesansbold.ttf', 20)
+
+    def score():
+        global points, game_speed
 
     def track():
         global x_pos_bg, y_pos_bg
