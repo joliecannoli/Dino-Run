@@ -112,6 +112,23 @@ class Clouds:
     def draw(self, SCREEN):
         SCREEN.blit(self.image, (self.x, self.y))
 
+class Obstacle:
+    def __init__ (self, image, type):
+        self.image = image
+        self.type = type
+        self.rect = self.image[self.type].get_rect()
+        self.rect.x = SCREEN_WIDTH
+
+    def update(self):
+        self.rect.x -= game_speed
+        if self.rect.x < -self.rect.width:
+            obstacles.pop()
+
+    def draw(self, SCREEN):
+        SCREEN.blit(self.image[self.type], self.rect)
+
+
+
 def main():
     global game_speed, x_pos_bg, y_pos_bg, points
     run = True 
@@ -150,7 +167,6 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-
         color = (255, 255, 255)
         SCREEN.fill(color)
         userInput = pygame.key.get_pressed()
