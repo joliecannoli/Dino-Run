@@ -126,8 +126,15 @@ def main():
 
     def score():
         global points, game_speed
+        points +=1
         if points % 100 == 0:
             game_speed += 1
+
+        text = font.render("Points: " + str(points), True, (0, 0, 0))
+        textRect = text.get_rect()
+        textRect.center = (1000, 40)
+        SCREEN.blit(text, textRect)
+
 
     def track():
         global x_pos_bg, y_pos_bg
@@ -150,10 +157,13 @@ def main():
 
         player.draw(SCREEN)
         player.update(userInput)
+
         track()
 
         cloud.draw(SCREEN)
         cloud.update()
+
+        score()
 
         clock.tick(30)
         pygame.display.update()
