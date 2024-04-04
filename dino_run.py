@@ -109,7 +109,6 @@ class Clouds:
                 self.x = SCREEN_WIDTH + random.randint(2500, 3000)
                 self.y = random.randint(50, 100)
 
-    
 
 def main():
     global game_speed
@@ -122,7 +121,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-        color = (182, 198, 222)
+        color = (61, 111, 120)
         SCREEN.fill(color)
         userInput = pygame.key.get_pressed()
 
