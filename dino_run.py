@@ -127,10 +127,18 @@ class Obstacle:
     def draw(self, SCREEN):
         SCREEN.blit(self.image[self.type], self.rect)
 
+def small_cactus(obstacle):
+    def __init__(self, image):
+        self.type = random = randint(0, 2)
+        super().__init__(image, self.type)
+        self.rect.y = 325
+
+        def draw(self, SCREEN):
+            SCREEN.blit(self.image[self.type], self.rect)
 
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg, points
+    global game_speed, x_pos_bg, y_pos_bg, points, obstacles
     run = True 
     clock = pygame.time.Clock()
     player = Dinosaur()
