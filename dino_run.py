@@ -209,6 +209,9 @@ def main():
 
         for obstacle in obstacles:
             obstacle.draw(SCREEN)
+            obstacle.update()
+            if player.dino_rect.colliderect(obstacle.rect):
+                pygame.draw.rect(SCREEN, (255, 0, 0), player.dino_rect, 2)
 
         track()
 
