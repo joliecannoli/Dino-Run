@@ -136,7 +136,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-        color = (61, 111, 120)
+        color = (255, 255, 255)
         SCREEN.fill(color)
         userInput = pygame.key.get_pressed()
 
