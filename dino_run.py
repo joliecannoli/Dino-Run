@@ -199,6 +199,17 @@ def main():
         player.draw(SCREEN)
         player.update(userInput)
 
+        if len(obstacles) == 0:
+            if random.randint(0, 2) == 0:
+                 obstacles.append(small_cactus (SMALL_CACTUS))
+            elif random.randint(0, 2) == 1:
+                obstacles.append(large_cactus(LARGE_CACTUS))
+            elif random.randint(0, 2) == 2:
+                obstacles.append(bird(BIRD))
+
+        for obstacle in obstacles:
+            obstacle.draw(SCREEN)
+
         track()
 
         cloud.draw(SCREEN)
