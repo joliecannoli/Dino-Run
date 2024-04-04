@@ -118,6 +118,7 @@ def main():
     clock = pygame.time.Clock()
     player = Dinosaur()
     cloud = Clouds()
+    game_speed = 14
 
     while run: 
         for event in pygame.event.get():
